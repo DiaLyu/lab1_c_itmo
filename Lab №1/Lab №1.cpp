@@ -243,7 +243,24 @@ int main()
     choiceTypes(type1, type2);
     cout << type1 << " " << type2 << endl;
 
-    menuFunction(type1, type2);
+    cout << "Выберите номер необходимой команды:\n";
+    cout << "1. Составлять выражение \n";
+    cout << "2. Посмотреть результат выражения, составленной при прошлой компиляции программы \n";
+
+    int choice;
+    numericalInputValidation<int>(choice, "Выберите номер команды > ");
+
+    switch (choice) {
+        case 1: 
+            menuFunction(type1, type2);
+            break;
+        case 2:
+            add_f();
+            break;
+        default:
+            cout << "Неправильная команда! Завершение программы\n";
+            break;
+    }
 
     return 0;
 }
